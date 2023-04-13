@@ -1,5 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+require("dotenv").config();
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
@@ -31,13 +32,15 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
+  customFields: {
+    env: {
+      FIREBASE_API_KEY: "AIzaSyD4eUzcZ56XHnDvQ0_DZA74953PtvaImws",
+      FIREBASE_AUTH_DOMAIN: "planitly.firebaseapp.com",
+      FIREBASE_PROJECT_ID: "planitly",
+      FIREBASE_STORAGE_BUCKET: "planitly.appspot.com",
+    },
+  },
   plugins: [
-    [
-      "docusaurus2-dotenv",
-      {
-        systemvars: true,
-      },
-    ],
     async function myPlugin(context, options) {
       return {
         name: "docusaurus-tailwindcss",
